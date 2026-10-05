@@ -10,7 +10,7 @@ namespace ENTIDADES
     {
         public int Id {get; private set;}
 
-        public string Nombre {get;  set;}
+        public string nombre {get;  set;}
         public int Cantidad {get;  set;}
         public decimal Precio {get; set;}
 
@@ -23,14 +23,14 @@ namespace ENTIDADES
         public Inventario( string nombre, int cantidad, decimal precio)
         {
             Id = Guid.NewGuid().GetHashCode() % 1000; // Genera un ID aleatorio entre 1 y 1000
-            Nombre = nombre;
+            this.nombre = nombre;
             Cantidad = cantidad;
             Precio = precio;
         }
 
         public override string ToString()
         {
-            return $"ID: {Id}, Inventario: {Nombre}, Cantidad: {Cantidad}, Precio: {Precio}";
+            return $"ID: {Id}, Inventario: {nombre}, Cantidad: {Cantidad}, Precio: {Precio}";
         }
     }
 }
